@@ -1,0 +1,1212 @@
+[
+ {
+  "key": "S1",
+  "name": "80s indie comic ink",
+  "items": [
+   {
+    "name": "Archie McKinnon",
+    "src": "img/S1_Archie-McKinnon.webp"
+   },
+   {
+    "name": "Babatunde Adeyemi",
+    "src": "img/S1_Babatunde-Adeyemi.webp"
+   },
+   {
+    "name": "Barana",
+    "src": "img/S1_Barana.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S1_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S1_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S1_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S1_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S1_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Kealani",
+    "src": "img/S1_Kealani.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S1_Myong-il-Song.webp"
+   }
+  ]
+ },
+ {
+  "key": "S2",
+  "name": "80s magazine sports illustration",
+  "items": [
+   {
+    "name": "Archie McKinnon",
+    "src": "img/S2_Archie-McKinnon.webp"
+   },
+   {
+    "name": "Babatunde Adeyemi",
+    "src": "img/S2_Babatunde-Adeyemi.webp"
+   },
+   {
+    "name": "Barana",
+    "src": "img/S2_Barana.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S2_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S2_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S2_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S2_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S2_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Kealani",
+    "src": "img/S2_Kealani.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S2_Myong-il-Song.webp"
+   }
+  ]
+ },
+ {
+  "key": "S3",
+  "name": "Hand-painted fight poster",
+  "items": [
+   {
+    "name": "Archie McKinnon",
+    "src": "img/S3_Archie-McKinnon.webp"
+   },
+   {
+    "name": "Babatunde Adeyemi",
+    "src": "img/S3_Babatunde-Adeyemi.webp"
+   },
+   {
+    "name": "Barana",
+    "src": "img/S3_Barana.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S3_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S3_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S3_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S3_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S3_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Kealani",
+    "src": "img/S3_Kealani.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S3_Myong-il-Song.webp"
+   }
+  ]
+ },
+ {
+  "key": "S4",
+  "name": "Pulp paperback painting",
+  "items": [
+   {
+    "name": "Archie McKinnon",
+    "src": "img/S4_Archie-McKinnon.webp"
+   },
+   {
+    "name": "Babatunde Adeyemi",
+    "src": "img/S4_Babatunde-Adeyemi.webp"
+   },
+   {
+    "name": "Barana",
+    "src": "img/S4_Barana.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S4_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S4_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S4_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S4_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S4_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Kealani",
+    "src": "img/S4_Kealani.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S4_Myong-il-Song.webp"
+   }
+  ]
+ },
+ {
+  "key": "S5",
+  "name": "Ligne claire",
+  "items": [
+   {
+    "name": "Archie McKinnon",
+    "src": "img/S5_Archie-McKinnon.webp"
+   },
+   {
+    "name": "Babatunde Adeyemi",
+    "src": "img/S5_Babatunde-Adeyemi.webp"
+   },
+   {
+    "name": "Barana",
+    "src": "img/S5_Barana.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S5_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S5_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S5_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S5_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S5_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S5_Myong-il-Song.webp"
+   }
+  ]
+ },
+ {
+  "key": "S6",
+  "name": "80s anime cel",
+  "items": [
+   {
+    "name": "Archie McKinnon",
+    "src": "img/S6_Archie-McKinnon.webp"
+   },
+   {
+    "name": "Babatunde Adeyemi",
+    "src": "img/S6_Babatunde-Adeyemi.webp"
+   },
+   {
+    "name": "Barana",
+    "src": "img/S6_Barana.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S6_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S6_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S6_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S6_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S6_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Kealani",
+    "src": "img/S6_Kealani.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S6_Myong-il-Song.webp"
+   }
+  ]
+ },
+ {
+  "key": "S7",
+  "name": "80s Saturday-morning cartoon",
+  "items": [
+   {
+    "name": "Archie McKinnon",
+    "src": "img/S7_Archie-McKinnon.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S7_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S7_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S7_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S7_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S7_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Kealani",
+    "src": "img/S7_Kealani.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S7_Myong-il-Song.webp"
+   }
+  ]
+ },
+ {
+  "key": "S8",
+  "name": "80s flat fashion illustration",
+  "items": [
+   {
+    "name": "Archie McKinnon",
+    "src": "img/S8_Archie-McKinnon.webp"
+   },
+   {
+    "name": "Babatunde Adeyemi",
+    "src": "img/S8_Babatunde-Adeyemi.webp"
+   },
+   {
+    "name": "Barana",
+    "src": "img/S8_Barana.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S8_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S8_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S8_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S8_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S8_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Kealani",
+    "src": "img/S8_Kealani.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S8_Myong-il-Song.webp"
+   }
+  ]
+ },
+ {
+  "key": "S9",
+  "name": "Screenprint poster",
+  "items": [
+   {
+    "name": "Archie McKinnon",
+    "src": "img/S9_Archie-McKinnon.webp"
+   },
+   {
+    "name": "Babatunde Adeyemi",
+    "src": "img/S9_Babatunde-Adeyemi.webp"
+   },
+   {
+    "name": "Barana",
+    "src": "img/S9_Barana.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S9_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S9_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S9_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S9_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S9_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Kealani",
+    "src": "img/S9_Kealani.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S9_Myong-il-Song.webp"
+   }
+  ]
+ },
+ {
+  "key": "S10",
+  "name": "Linocut",
+  "items": [
+   {
+    "name": "Babatunde Adeyemi",
+    "src": "img/S10_Babatunde-Adeyemi.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S10_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S10_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S10_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S10_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S10_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Kealani",
+    "src": "img/S10_Kealani.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S10_Myong-il-Song.webp"
+   }
+  ]
+ },
+ {
+  "key": "S11",
+  "name": "Expressive oil (game art)",
+  "items": [
+   {
+    "name": "Archie McKinnon",
+    "src": "img/S11_Archie-McKinnon.webp"
+   },
+   {
+    "name": "Babatunde Adeyemi",
+    "src": "img/S11_Babatunde-Adeyemi.webp"
+   },
+   {
+    "name": "Barana",
+    "src": "img/S11_Barana.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S11_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S11_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S11_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S11_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S11_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Kealani",
+    "src": "img/S11_Kealani.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S11_Myong-il-Song.webp"
+   }
+  ]
+ },
+ {
+  "key": "S12",
+  "name": "Painted cel hybrid",
+  "items": [
+   {
+    "name": "Archie McKinnon",
+    "src": "img/S12_Archie-McKinnon.webp"
+   },
+   {
+    "name": "Babatunde Adeyemi",
+    "src": "img/S12_Babatunde-Adeyemi.webp"
+   },
+   {
+    "name": "Barana",
+    "src": "img/S12_Barana.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S12_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S12_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S12_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S12_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S12_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Kealani",
+    "src": "img/S12_Kealani.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S12_Myong-il-Song.webp"
+   }
+  ]
+ },
+ {
+  "key": "S13",
+  "name": "Graphic noir",
+  "items": [
+   {
+    "name": "Archie McKinnon",
+    "src": "img/S13_Archie-McKinnon.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S13_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S13_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S13_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S13_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S13_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Kealani",
+    "src": "img/S13_Kealani.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S13_Myong-il-Song.webp"
+   }
+  ]
+ },
+ {
+  "key": "S14",
+  "name": "Flat vector",
+  "items": [
+   {
+    "name": "Archie McKinnon",
+    "src": "img/S14_Archie-McKinnon.webp"
+   },
+   {
+    "name": "Barana",
+    "src": "img/S14_Barana.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S14_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S14_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S14_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S14_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S14_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Kealani",
+    "src": "img/S14_Kealani.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S14_Myong-il-Song.webp"
+   }
+  ]
+ },
+ {
+  "key": "S15",
+  "name": "OVA anime (80s/90s)",
+  "items": [
+   {
+    "name": "Archie McKinnon",
+    "src": "img/S15_Archie-McKinnon.webp"
+   },
+   {
+    "name": "Babatunde Adeyemi",
+    "src": "img/S15_Babatunde-Adeyemi.webp"
+   },
+   {
+    "name": "Barana",
+    "src": "img/S15_Barana.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S15_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S15_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S15_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S15_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S15_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Kealani",
+    "src": "img/S15_Kealani.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S15_Myong-il-Song.webp"
+   }
+  ]
+ },
+ {
+  "key": "S16",
+  "name": "90s wrestling caricature",
+  "items": [
+   {
+    "name": "Archie McKinnon",
+    "src": "img/S16_Archie-McKinnon.webp"
+   },
+   {
+    "name": "Babatunde Adeyemi",
+    "src": "img/S16_Babatunde-Adeyemi.webp"
+   },
+   {
+    "name": "Barana",
+    "src": "img/S16_Barana.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S16_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S16_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S16_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S16_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S16_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Kealani",
+    "src": "img/S16_Kealani.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S16_Myong-il-Song.webp"
+   }
+  ]
+ },
+ {
+  "key": "S17",
+  "name": "80s fantasy poster airbrush",
+  "items": [
+   {
+    "name": "Archie McKinnon",
+    "src": "img/S17_Archie-McKinnon.webp"
+   },
+   {
+    "name": "Babatunde Adeyemi",
+    "src": "img/S17_Babatunde-Adeyemi.webp"
+   },
+   {
+    "name": "Barana",
+    "src": "img/S17_Barana.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S17_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S17_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S17_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S17_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S17_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Kealani",
+    "src": "img/S17_Kealani.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S17_Myong-il-Song.webp"
+   }
+  ]
+ },
+ {
+  "key": "S18",
+  "name": "80s heroic fantasy oil",
+  "items": [
+   {
+    "name": "Archie McKinnon",
+    "src": "img/S18_Archie-McKinnon.webp"
+   },
+   {
+    "name": "Babatunde Adeyemi",
+    "src": "img/S18_Babatunde-Adeyemi.webp"
+   },
+   {
+    "name": "Barana",
+    "src": "img/S18_Barana.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S18_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S18_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S18_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S18_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S18_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Kealani",
+    "src": "img/S18_Kealani.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S18_Myong-il-Song.webp"
+   }
+  ]
+ },
+ {
+  "key": "S19",
+  "name": "NES box art",
+  "items": [
+   {
+    "name": "Archie McKinnon",
+    "src": "img/S19_Archie-McKinnon.webp"
+   },
+   {
+    "name": "Babatunde Adeyemi",
+    "src": "img/S19_Babatunde-Adeyemi.webp"
+   },
+   {
+    "name": "Barana",
+    "src": "img/S19_Barana.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S19_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S19_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S19_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S19_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S19_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Kealani",
+    "src": "img/S19_Kealani.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S19_Myong-il-Song.webp"
+   }
+  ]
+ },
+ {
+  "key": "S20",
+  "name": "90s street brawler cover",
+  "items": [
+   {
+    "name": "Archie McKinnon",
+    "src": "img/S20_Archie-McKinnon.webp"
+   },
+   {
+    "name": "Babatunde Adeyemi",
+    "src": "img/S20_Babatunde-Adeyemi.webp"
+   },
+   {
+    "name": "Barana",
+    "src": "img/S20_Barana.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S20_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S20_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S20_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S20_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S20_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Kealani",
+    "src": "img/S20_Kealani.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S20_Myong-il-Song.webp"
+   }
+  ]
+ },
+ {
+  "key": "S21",
+  "name": "Clean 80s airbrush",
+  "items": [
+   {
+    "name": "Archie McKinnon",
+    "src": "img/S21_Archie-McKinnon.webp"
+   },
+   {
+    "name": "Babatunde Adeyemi",
+    "src": "img/S21_Babatunde-Adeyemi.webp"
+   },
+   {
+    "name": "Barana",
+    "src": "img/S21_Barana.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S21_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S21_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S21_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S21_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S21_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Kealani",
+    "src": "img/S21_Kealani.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S21_Myong-il-Song.webp"
+   }
+  ]
+ },
+ {
+  "key": "S22",
+  "name": "House style: current lock",
+  "items": [
+   {
+    "name": "Archie McKinnon",
+    "src": "img/S22_Archie-McKinnon.webp"
+   },
+   {
+    "name": "Babatunde Adeyemi",
+    "src": "img/S22_Babatunde-Adeyemi.webp"
+   },
+   {
+    "name": "Barana",
+    "src": "img/S22_Barana.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S22_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S22_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S22_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S22_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S22_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Kealani",
+    "src": "img/S22_Kealani.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S22_Myong-il-Song.webp"
+   }
+  ]
+ },
+ {
+  "key": "S23",
+  "name": "House style: early cartoon",
+  "items": [
+   {
+    "name": "Archie McKinnon",
+    "src": "img/S23_Archie-McKinnon.webp"
+   },
+   {
+    "name": "Babatunde Adeyemi",
+    "src": "img/S23_Babatunde-Adeyemi.webp"
+   },
+   {
+    "name": "Barana",
+    "src": "img/S23_Barana.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S23_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S23_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S23_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S23_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S23_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Kealani",
+    "src": "img/S23_Kealani.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S23_Myong-il-Song.webp"
+   }
+  ]
+ },
+ {
+  "key": "S24",
+  "name": "House style: painterly oil",
+  "items": [
+   {
+    "name": "Archie McKinnon",
+    "src": "img/S24_Archie-McKinnon.webp"
+   },
+   {
+    "name": "Babatunde Adeyemi",
+    "src": "img/S24_Babatunde-Adeyemi.webp"
+   },
+   {
+    "name": "Barana",
+    "src": "img/S24_Barana.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S24_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S24_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S24_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S24_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S24_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Kealani",
+    "src": "img/S24_Kealani.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S24_Myong-il-Song.webp"
+   }
+  ]
+ },
+ {
+  "key": "S25",
+  "name": "House style: old gold standard",
+  "items": [
+   {
+    "name": "Archie McKinnon",
+    "src": "img/S25_Archie-McKinnon.webp"
+   },
+   {
+    "name": "Babatunde Adeyemi",
+    "src": "img/S25_Babatunde-Adeyemi.webp"
+   },
+   {
+    "name": "Barana",
+    "src": "img/S25_Barana.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S25_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S25_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S25_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S25_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S25_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Kealani",
+    "src": "img/S25_Kealani.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S25_Myong-il-Song.webp"
+   }
+  ]
+ },
+ {
+  "key": "S26",
+  "name": "Edit-mode wrestling sprite",
+  "items": [
+   {
+    "name": "Archie McKinnon",
+    "src": "img/S26_Archie-McKinnon.webp"
+   },
+   {
+    "name": "Babatunde Adeyemi",
+    "src": "img/S26_Babatunde-Adeyemi.webp"
+   },
+   {
+    "name": "Barana",
+    "src": "img/S26_Barana.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S26_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S26_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S26_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S26_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S26_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Kealani",
+    "src": "img/S26_Kealani.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S26_Myong-il-Song.webp"
+   }
+  ]
+ },
+ {
+  "key": "S27",
+  "name": "96px pixel sprite",
+  "items": [
+   {
+    "name": "Archie McKinnon",
+    "src": "img/S27_Archie-McKinnon.webp"
+   },
+   {
+    "name": "Babatunde Adeyemi",
+    "src": "img/S27_Babatunde-Adeyemi.webp"
+   },
+   {
+    "name": "Barana",
+    "src": "img/S27_Barana.webp"
+   },
+   {
+    "name": "Buddy Lanier",
+    "src": "img/S27_Buddy-Lanier.webp"
+   },
+   {
+    "name": "Curtis Eugene Wade",
+    "src": "img/S27_Curtis-Eugene-Wade.webp"
+   },
+   {
+    "name": "Dama Nocturna",
+    "src": "img/S27_Dama-Nocturna.webp"
+   },
+   {
+    "name": "Denise Marie Calloway",
+    "src": "img/S27_Denise-Marie-Calloway.webp"
+   },
+   {
+    "name": "Ivory Sinclair",
+    "src": "img/S27_Ivory-Sinclair.webp"
+   },
+   {
+    "name": "Kealani",
+    "src": "img/S27_Kealani.webp"
+   },
+   {
+    "name": "Myong-il Song",
+    "src": "img/S27_Myong-il-Song.webp"
+   }
+  ]
+ }
+]

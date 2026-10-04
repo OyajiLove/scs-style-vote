@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SCS Style Vote</title>
+<meta name="description" content="Rate 27 candidate portrait art styles for Squared Circle Soul, the 1985 wrestling booking sim.">
+<style>
+:root{--bg:#f6f1ea;--panel:#fffdf9;--ink:#221a17;--muted:#6f625b;--line:#e3d8cc;--accent:#a3332b;--star:#d9a21b;--star-off:#d8cfc6;--card:#ffffff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17110f;--panel:#211916;--ink:#f1e8e1;--muted:#a99a90;--line:#3a2d28;--accent:#e0645a;--star:#f0bd3a;--star-off:#4a3b35;--card:#f4efe9}}
+:root[data-theme="dark"]{--bg:#17110f;--panel:#211916;--ink:#f1e8e1;--muted:#a99a90;--line:#3a2d28;--accent:#e0645a;--star:#f0bd3a;--star-off:#4a3b35;--card:#f4efe9}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{padding:28px 16px 12px;max-width:1240px;margin:0 auto}
+h1{margin:0 0 6px;font-size:clamp(26px,5vw,40px);letter-spacing:-.01em}
+.lede{color:var(--muted);max-width:760px;margin:0}
+.bar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:1240px;margin:0 auto;padding:10px 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.count{color:var(--muted);font-size:14px;margin-right:auto}
+button{font:inherit;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:7px 14px;border-radius:8px;cursor:pointer}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+main{max-width:1240px;margin:0 auto;padding:8px 16px 60px}
+section{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;margin:18px 0}
+.head{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.tag{font-size:12px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:1px 7px}
+h2{margin:0;font-size:20px;flex:1 1 auto}
+.stars{display:flex;gap:2px}
+.stars button{border:0;background:none;padding:2px;font-size:26px;line-height:1;color:var(--star-off)}
+.stars button.on{color:var(--star)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+figure{margin:0;background:var(--card);border-radius:10px;overflow:hidden;cursor:zoom-in;border:1px solid var(--line)}
+figure img{display:block;width:100%;aspect-ratio:2/3;object-fit:contain}
+figure img.px{image-rendering:pixelated}
+figcaption{font-size:12px;color:#5a4d46;padding:4px 8px 6px;background:var(--card)}
+.note{margin-top:10px}
+.note input{width:100%;font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+#lb{position:fixed;inset:0;background:rgba(10,6,5,.92);display:none;align-items:center;justify-content:center;z-index:20;padding:16px}
+#lb.open{display:flex}
+#lb img{max-width:100%;max-height:88vh;background:#fff;border-radius:8px}
+#lb p{position:absolute;bottom:12px;left:0;right:0;text-align:center;color:#eee;margin:0}
+#toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:8px;display:none;z-index:30}
+@media (max-width:520px){.grid{grid-template-columns:repeat(2,1fr)}.stars button{font-size:24px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Squared Circle Soul: style vote</h1>
+  <p class="lede">The same ten Ringstate characters, drawn in 27 candidate art styles. Give each style one to five stars and add a note if you like, then hit <b>Send ratings</b>. Click any picture to see it big.</p>
+</header>
+<div class="bar"><div class="bar-in">
+  <span class="count" id="count">0 of 27 rated</span>
+  <button id="copy">Copy ratings</button>
+  <button class="primary" id="send">Send ratings</button>
+</div></div>
+<main id="main"></main>
+<div id="lb"><img alt=""><p></p></div>
+<div id="toast"></div>
+<script>
+const KEY="scs-style-vote-v1";
+let store={};try{store=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(store))}catch(e){}};
+let styles=[];
+const $=s=>document.querySelector(s);
+function toast(t){const el=$("#toast");el.textContent=t;el.style.display="block";setTimeout(()=>el.style.display="none",2200)}
+function updateCount(){$("#count").textContent=`${styles.filter(s=>store[s.key]?.stars).length} of ${styles.length} rated`}
+function summary(){
+  return styles.map(s=>{const r=store[s.key]||{};return `${s.key} ${s.name}: ${r.stars?("★".repeat(r.stars)+` (${r.stars}/5)`):"not rated"}${r.note?` | ${r.note}`:""}`}).join("\n");
+}
+function render(){
+  const main=$("#main");
+  styles.forEach(s=>{
+    const sec=document.createElement("section");
+    const px=/sprite|pixel/i.test(s.name);
+    sec.innerHTML=`<div class="head"><span class="tag">${s.key}</span><h2></h2><div class="stars" role="radiogroup" aria-label="Rate ${s.name}"></div></div><div class="grid"></div><div class="note"><input type="text" placeholder="Optional note on this style"></div>`;
+    sec.querySelector("h2").textContent=s.name;
+    const stars=sec.querySelector(".stars");
+    const paint=()=>[...stars.children].forEach((b,i)=>b.classList.toggle("on",i<(store[s.key]?.stars||0)));
+    for(let i=1;i<=5;i++){const b=document.createElement("button");b.textContent="★";b.setAttribute("aria-label",`${i} star${i>1?"s":""}`);
+      b.onclick=()=>{store[s.key]={...(store[s.key]||{}),stars:i};save();paint();updateCount()};stars.appendChild(b)}
+    paint();
+    const grid=sec.querySelector(".grid");
+    s.items.forEach(it=>{const f=document.createElement("figure");f.innerHTML=`<img loading="lazy" alt=""><figcaption></figcaption>`;
+      const img=f.querySelector("img");img.src=it.src;img.alt=`${it.name}, ${s.name}`;if(px)img.classList.add("px");
+      f.querySelector("figcaption").textContent=it.name;
+      f.onclick=()=>{const lb=$("#lb");lb.querySelector("img").src=it.src;lb.querySelector("img").style.imageRendering=px?"pixelated":"auto";lb.querySelector("p").textContent=`${it.name} · ${s.name}`;lb.classList.add("open")};
+      grid.appendChild(f)});
+    const note=sec.querySelector(".note input");note.value=store[s.key]?.note||"";
+    note.oninput=()=>{store[s.key]={...(store[s.key]||{}),note:note.value};save()};
+    main.appendChild(sec);
+  });
+  updateCount();
+}
+$("#lb").onclick=()=>$("#lb").classList.remove("open");
+$("#copy").onclick=async()=>{try{await navigator.clipboard.writeText(summary());toast("Ratings copied")}catch(e){prompt("Copy your ratings:",summary())}};
+$("#send").onclick=()=>{
+  const who=prompt("Your name or handle (optional):")||"anonymous";
+  const body=`Rater: ${who}\n\n\`\`\`\n${summary()}\n\`\`\``;
+  window.open(`https://github.com/OyajiLove/scs-style-vote/issues/new?title=${encodeURIComponent("Ratings from "+who)}&labels=ratings&body=${encodeURIComponent(body)}`,"_blank");
+};
+fetch("styles.json").then(r=>r.json()).then(d=>{styles=d;render()}).catch(()=>{$("#main").textContent="Could not load the styles list."});
+</script>
+</body>
+</html>

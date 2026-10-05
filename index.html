@@ -52,6 +52,7 @@ figure .stars button.on{color:#d9a21b}
 #lb .stars button.on{color:#f0bd3a}
 #lb .nav{position:absolute;top:50%;transform:translateY(-50%);font-size:34px;line-height:1;background:rgba(255,255,255,.12);color:#fff;border:0;width:48px;height:64px;border-radius:10px}
 #lb .prev{left:8px} #lb .next{right:8px}
+#lb .auto{color:#bbb;font-size:13px;margin-top:6px;display:flex;gap:6px;align-items:center}
 #lb .close{position:absolute;top:10px;right:12px;background:none;border:0;color:#fff;font-size:28px}
 #toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:8px;display:none;z-index:30}
 @media (max-width:520px){.grid{grid-template-columns:repeat(2,1fr)}#lb{padding:12px 8px 70px}#lb .nav{top:auto;bottom:10px;transform:none}}
@@ -69,7 +70,7 @@ figure .stars button.on{color:#d9a21b}
   <button class="primary" id="send">Send ratings</button>
 </div><nav class="jump" id="jump"></nav></div>
 <main id="main"></main>
-<div id="lb"><button class="close" aria-label="Close">✕</button><button class="nav prev" aria-label="Previous">‹</button><img alt=""><div class="cap"></div><div class="stars sm" id="lbstars"></div><button class="nav next" aria-label="Next">›</button></div>
+<div id="lb"><button class="close" aria-label="Close">✕</button><button class="nav prev" aria-label="Previous">‹</button><img alt=""><div class="cap"></div><div class="stars sm" id="lbstars"></div><label class="auto"><input type="checkbox" id="autochk"> Auto-advance after rating · keys 1-5 rate</label><button class="nav next" aria-label="Next">›</button></div>
 <div id="toast"></div>
 <script>
 const KEY="scs-style-vote-v2";
@@ -80,11 +81,11 @@ let styles=[],chars=[],view="style",list=[],pos=0;
 const $=s=>document.querySelector(s);
 const imgKey=(sk,name)=>sk+"|"+name;
 function toast(t){const el=$("#toast");el.textContent=t;el.style.display="block";setTimeout(()=>el.style.display="none",2200)}
-function makeStars(get,set,small){
+function makeStars(get,set,small,onRate){
   const d=document.createElement("div");d.className="stars"+(small?" sm":"");
   const paint=()=>[...d.children].forEach((b,i)=>b.classList.toggle("on",i<(get()||0)));
   for(let i=1;i<=5;i++){const b=document.createElement("button");b.textContent="★";b.setAttribute("aria-label",i+" star"+(i>1?"s":""));
-    b.onclick=e=>{e.stopPropagation();set(get()===i?0:i);save();paint();updateCount();syncAll()};d.appendChild(b)}
+    b.onclick=e=>{e.stopPropagation();const v=get()===i?0:i;set(v);save();paint();updateCount();syncAll();if(onRate&&v)onRate(v)};d.appendChild(b)}
   d._paint=paint;paint();return d;
 }
 const painters=new Set();function syncAll(){painters.forEach(p=>p())}
@@ -97,10 +98,13 @@ function openLb(items,i){list=items;pos=i;showLb();$("#lb").classList.add("open"
 function showLb(){
   const it=list[pos];const im=$("#lb img");im.src=it.full;im.className=it.px?"px":"";im.alt=`${it.name}, ${it.styleName}`;
   $("#lb .cap").textContent=`${it.name} · ${it.styleKey} ${it.styleName}  (${pos+1} of ${list.length})`;
-  const host=$("#lbstars");host.replaceWith(Object.assign(makeStars(()=>store.images[imgKey(it.styleKey,it.name)],v=>store.images[imgKey(it.styleKey,it.name)]=v,true),{id:"lbstars"}));
+  const host=$("#lbstars");host.replaceWith(Object.assign(makeStars(()=>store.images[imgKey(it.styleKey,it.name)],v=>store.images[imgKey(it.styleKey,it.name)]=v,true,autoNext),{id:"lbstars"}));
   const nx=list[(pos+1)%list.length];new Image().src=nx.full;
 }
 function step(d){pos=(pos+d+list.length)%list.length;showLb()}
+let auto=true;try{auto=localStorage.getItem("scs-auto")!=="0"}catch(e){}
+let autoT=null;function autoNext(){if(!auto)return;clearTimeout(autoT);autoT=setTimeout(()=>{if($("#lb").classList.contains("open"))step(1)},350)}
+function rateCurrent(v){const it=list[pos];const k=imgKey(it.styleKey,it.name);store.images[k]=v;save();updateCount();syncAll();showLb();autoNext()}
 function figure(it,caption,items,i,rateable){
   const f=document.createElement("figure");
   const img=document.createElement("img");img.loading="lazy";img.src=it.src;img.alt=`${it.name}, ${it.styleName}`;if(it.px)img.classList.add("px");
@@ -144,9 +148,10 @@ function summary(){
   return lines.join("\n");
 }
 $("#lb .prev").onclick=e=>{e.stopPropagation();step(-1)};$("#lb .next").onclick=e=>{e.stopPropagation();step(1)};
+$("#autochk").checked=auto;$("#autochk").onclick=e=>e.stopPropagation();$("#autochk").onchange=e=>{auto=e.target.checked;try{localStorage.setItem("scs-auto",auto?"1":"0")}catch(x){}};
 $("#lb .close").onclick=()=>$("#lb").classList.remove("open");
 $("#lb").onclick=e=>{if(e.target.id==="lb")$("#lb").classList.remove("open")};
-document.addEventListener("keydown",e=>{if(!$("#lb").classList.contains("open"))return;if(e.key==="ArrowRight")step(1);else if(e.key==="ArrowLeft")step(-1);else if(e.key==="Escape")$("#lb").classList.remove("open")});
+document.addEventListener("keydown",e=>{if(!$("#lb").classList.contains("open"))return;if(e.key==="ArrowRight")step(1);else if(e.key==="ArrowLeft")step(-1);else if(e.key==="Escape")$("#lb").classList.remove("open");else if(/^[1-5]$/.test(e.key))rateCurrent(+e.key)});
 let tx=null;$("#lb").addEventListener("touchstart",e=>tx=e.touches[0].clientX,{passive:true});
 $("#lb").addEventListener("touchend",e=>{if(tx===null)return;const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>50)step(dx<0?1:-1);tx=null});
 $("#copy").onclick=async()=>{try{await navigator.clipboard.writeText(summary());toast("Ratings copied")}catch(e){prompt("Copy your ratings:",summary())}};

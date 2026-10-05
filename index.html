@@ -19,6 +19,7 @@ h1{margin:0 0 6px;font-size:clamp(26px,5vw,40px);letter-spacing:-.01em}
 .seg{display:flex;border:1px solid var(--line);border-radius:9px;overflow:hidden}
 .seg button{border:0;border-radius:0;background:var(--panel)}
 .seg button.on{background:var(--ink);color:var(--bg)}
+.hide1{font-size:14px;display:flex;gap:6px;align-items:center;color:var(--muted)}
 .count{color:var(--muted);font-size:14px;margin-right:auto}
 button{font:inherit;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:7px 14px;border-radius:8px;cursor:pointer}
 button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
@@ -34,6 +35,7 @@ h2{margin:0;font-size:20px;flex:1 1 auto}
 .stars button{border:0;background:none;padding:2px;font-size:26px;line-height:1;color:var(--star-off)}
 .stars button.on{color:var(--star)}
 .stars.sm button{font-size:20px;padding:1px}
+.stars.inh button.on{opacity:.5}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
 figure{margin:0;background:var(--card);border-radius:10px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
 figure img{display:block;width:100%;aspect-ratio:2/3;object-fit:contain;cursor:zoom-in}
@@ -61,11 +63,11 @@ figure .stars button.on{color:#d9a21b}
 <body>
 <header>
   <h1>Squared Circle Soul: style vote</h1>
-  <p class="lede">The same ten Ringstate characters drawn in many candidate art styles. <b>By style</b>: give each style one to five stars. <b>By character</b>: see one person in every style and star each picture. Click any picture to see it full size and use the arrows (or your arrow keys) to step through. When you're done, hit <b>Send ratings</b>.</p>
+  <p class="lede">The same ten Ringstate characters drawn in many candidate art styles. <b>By style</b>: give each style one to five stars. <b>By character</b>: see one person in every style and star each picture; a style's rating carries to its pictures until you rate one yourself. Tick <b>Hide 1★</b> to clear your least favourites out of the way. Click any picture to see it full size and use the arrows (or your arrow keys) to step through. When you're done, hit <b>Send ratings</b>.</p>
 </header>
 <div class="bar"><div class="bar-in">
   <div class="seg" role="tablist"><button id="v-style" class="on">By style</button><button id="v-char">By character</button></div>
-  <span class="count" id="count"></span>
+  <label class="hide1"><input type="checkbox" id="hide1"> Hide 1★</label><span class="count" id="count"></span>
   <button id="copy">Copy ratings</button>
   <button class="primary" id="send">Send ratings</button>
 </div><nav class="jump" id="jump"></nav></div>
@@ -77,13 +79,19 @@ const KEY="scs-style-vote-v2";
 let store={styles:{},images:{}};
 try{const s=JSON.parse(localStorage.getItem(KEY)||"null");if(s)store=s;else{const old=JSON.parse(localStorage.getItem("scs-style-vote-v1")||"{}");store.styles=old||{}}}catch(e){}
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(store))}catch(e){}};
-let styles=[],chars=[],view="style",list=[],pos=0;
+let styles=[],chars=[],view="style",list=[],pos=0,hide1=false;
+try{hide1=localStorage.getItem("scs-hide1")==="1"}catch(e){}
 const $=s=>document.querySelector(s);
 const imgKey=(sk,name)=>sk+"|"+name;
+// A picture you have not rated yourself takes its style's rating (Ryan 2026-10-04).
+const ownR=it=>store.images[imgKey(it.styleKey,it.name)];
+const effR=it=>ownR(it)||store.styles[it.styleKey]?.stars||0;
+const isInh=it=>!ownR(it)&&!!store.styles[it.styleKey]?.stars;
+const setR=(it,v)=>{const k=imgKey(it.styleKey,it.name);if(v)store.images[k]=v;else delete store.images[k]};
 function toast(t){const el=$("#toast");el.textContent=t;el.style.display="block";setTimeout(()=>el.style.display="none",2200)}
-function makeStars(get,set,small,onRate){
+function makeStars(get,set,small,onRate,inherited){
   const d=document.createElement("div");d.className="stars"+(small?" sm":"");
-  const paint=()=>[...d.children].forEach((b,i)=>b.classList.toggle("on",i<(get()||0)));
+  const paint=()=>{d.classList.toggle("inh",!!(inherited&&inherited()));[...d.children].forEach((b,i)=>b.classList.toggle("on",i<(get()||0)))};
   for(let i=1;i<=5;i++){const b=document.createElement("button");b.textContent="★";b.setAttribute("aria-label",i+" star"+(i>1?"s":""));
     b.onclick=e=>{e.stopPropagation();const v=get()===i?0:i;set(v);save();paint();updateCount();syncAll();if(onRate&&v)onRate(v)};d.appendChild(b)}
   d._paint=paint;paint();return d;
@@ -91,32 +99,32 @@ function makeStars(get,set,small,onRate){
 const painters=new Set();function syncAll(){painters.forEach(p=>p())}
 function updateCount(){
   const sr=styles.filter(s=>store.styles[s.key]?.stars).length;
-  const ir=Object.values(store.images).filter(Boolean).length;
+  const ir=chars.reduce((n,c)=>n+c.items.filter(it=>effR(it)).length,0);
   $("#count").textContent=`${sr} of ${styles.length} styles rated · ${ir} pictures rated`;
 }
 function openLb(items,i){list=items;pos=i;showLb();$("#lb").classList.add("open")}
 function showLb(){
   const it=list[pos];const im=$("#lb img");im.src=it.full;im.className=it.px?"px":"";im.alt=`${it.name}, ${it.styleName}`;
   $("#lb .cap").textContent=`${it.name} · ${it.styleKey} ${it.styleName}  (${pos+1} of ${list.length})`;
-  const host=$("#lbstars");host.replaceWith(Object.assign(makeStars(()=>store.images[imgKey(it.styleKey,it.name)],v=>store.images[imgKey(it.styleKey,it.name)]=v,true,autoNext),{id:"lbstars"}));
+  const host=$("#lbstars");host.replaceWith(Object.assign(makeStars(()=>effR(it),v=>setR(it,v),true,autoNext,()=>isInh(it)),{id:"lbstars"}));
   const nx=list[(pos+1)%list.length];new Image().src=nx.full;
 }
 function step(d){pos=(pos+d+list.length)%list.length;showLb()}
 let auto=true;try{auto=localStorage.getItem("scs-auto")!=="0"}catch(e){}
 let autoT=null;function autoNext(){if(!auto)return;clearTimeout(autoT);autoT=setTimeout(()=>{if($("#lb").classList.contains("open"))step(1)},350)}
-function rateCurrent(v){const it=list[pos];const k=imgKey(it.styleKey,it.name);store.images[k]=v;save();updateCount();syncAll();showLb();autoNext()}
+function rateCurrent(v){const it=list[pos];setR(it,v);save();updateCount();syncAll();showLb();autoNext()}
 function figure(it,caption,items,i,rateable){
   const f=document.createElement("figure");
   const img=document.createElement("img");img.loading="lazy";img.src=it.src;img.alt=`${it.name}, ${it.styleName}`;if(it.px)img.classList.add("px");
   img.onclick=()=>openLb(items,i);f.appendChild(img);
   const c=document.createElement("figcaption");c.textContent=caption;f.appendChild(c);
-  if(rateable){const k=imgKey(it.styleKey,it.name);const st=makeStars(()=>store.images[k],v=>store.images[k]=v,true);painters.add(st._paint);f.appendChild(st)}
+  if(rateable){const st=makeStars(()=>effR(it),v=>setR(it,v),true,null,()=>isInh(it));painters.add(st._paint);f.appendChild(st)}
   return f;
 }
 function render(){
   const main=$("#main");main.innerHTML="";painters.clear();const jump=$("#jump");jump.innerHTML="";
   if(view==="style"){
-    styles.forEach(s=>{
+    styles.filter(s=>!(hide1&&store.styles[s.key]?.stars===1)).forEach(s=>{
       const sec=document.createElement("section");sec.id="s-"+s.key;
       sec.innerHTML=`<div class="head"><span class="tag">${s.key}</span><h2></h2></div><div class="grid"></div><div class="note"><input type="text" placeholder="Optional note on this style"></div>`;
       sec.querySelector("h2").textContent=s.name;
@@ -129,9 +137,10 @@ function render(){
     });
   }else{
     chars.forEach((c,ci)=>{
+      const its=c.items.filter(it=>!(hide1&&effR(it)===1));
       const sec=document.createElement("section");sec.id="c-"+ci;
       sec.innerHTML=`<div class="head"><h2></h2></div><div class="grid"></div>`;sec.querySelector("h2").textContent=c.name;
-      const grid=sec.querySelector(".grid");c.items.forEach((it,i)=>grid.appendChild(figure(it,`${it.styleKey} · ${it.styleName}`,c.items,i,true)));
+      const grid=sec.querySelector(".grid");its.forEach((it,i)=>grid.appendChild(figure(it,`${it.styleKey} · ${it.styleName}`,its,i,true)));
       main.appendChild(sec);
       const a=document.createElement("a");a.href="#c-"+ci;a.textContent=c.name;jump.appendChild(a);
     });
@@ -139,12 +148,13 @@ function render(){
   updateCount();
 }
 function setView(v){view=v;$("#v-style").classList.toggle("on",v==="style");$("#v-char").classList.toggle("on",v==="char");render();window.scrollTo(0,0)}
+$("#hide1").checked=hide1;$("#hide1").onchange=e=>{hide1=e.target.checked;try{localStorage.setItem("scs-hide1",hide1?"1":"0")}catch(x){}render()};
 $("#v-style").onclick=()=>setView("style");$("#v-char").onclick=()=>setView("char");
 function summary(){
   const lines=["STYLES"];
   styles.forEach(s=>{const r=store.styles[s.key]||{};lines.push(`${s.key} ${s.name}: ${r.stars?r.stars+"/5":"-"}${r.note?" | "+r.note:""}`)});
-  lines.push("","PICTURES (style=stars)");
-  chars.forEach(c=>{const rs=c.items.map(it=>[it.styleKey,store.images[imgKey(it.styleKey,it.name)]]).filter(x=>x[1]);if(rs.length)lines.push(`${c.name}: `+rs.map(x=>x[0]+"="+x[1]).join(" "))});
+  lines.push("","PICTURES rated individually (style=stars; every other picture takes its style's rating)");
+  chars.forEach(c=>{const rs=c.items.filter(it=>ownR(it)).map(it=>it.styleKey+"="+ownR(it));if(rs.length)lines.push(`${c.name}: `+rs.join(" "))});
   return lines.join("\n");
 }
 $("#lb .prev").onclick=e=>{e.stopPropagation();step(-1)};$("#lb .next").onclick=e=>{e.stopPropagation();step(1)};

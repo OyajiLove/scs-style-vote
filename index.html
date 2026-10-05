@@ -4,100 +4,163 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SCS Style Vote</title>
-<meta name="description" content="Rate 27 candidate portrait art styles for Squared Circle Soul, the 1985 wrestling booking sim.">
+<meta name="description" content="Rate candidate portrait art styles for Squared Circle Soul, the 1985 wrestling booking sim.">
 <style>
-:root{--bg:#f6f1ea;--panel:#fffdf9;--ink:#221a17;--muted:#6f625b;--line:#e3d8cc;--accent:#a3332b;--star:#d9a21b;--star-off:#d8cfc6;--card:#ffffff}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17110f;--panel:#211916;--ink:#f1e8e1;--muted:#a99a90;--line:#3a2d28;--accent:#e0645a;--star:#f0bd3a;--star-off:#4a3b35;--card:#f4efe9}}
-:root[data-theme="dark"]{--bg:#17110f;--panel:#211916;--ink:#f1e8e1;--muted:#a99a90;--line:#3a2d28;--accent:#e0645a;--star:#f0bd3a;--star-off:#4a3b35;--card:#f4efe9}
+:root{--bg:#f6f1ea;--panel:#fffdf9;--ink:#221a17;--muted:#6f625b;--line:#e3d8cc;--accent:#a3332b;--star:#d9a21b;--star-off:#d8cfc6;--card:#ffffff;--cap:#5a4d46}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17110f;--panel:#211916;--ink:#f1e8e1;--muted:#a99a90;--line:#3a2d28;--accent:#e0645a;--star:#f0bd3a;--star-off:#4a3b35;--card:#f4efe9;--cap:#5a4d46}}
+:root[data-theme="dark"]{--bg:#17110f;--panel:#211916;--ink:#f1e8e1;--muted:#a99a90;--line:#3a2d28;--accent:#e0645a;--star:#f0bd3a;--star-off:#4a3b35;--card:#f4efe9;--cap:#5a4d46}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
 header{padding:28px 16px 12px;max-width:1240px;margin:0 auto}
 h1{margin:0 0 6px;font-size:clamp(26px,5vw,40px);letter-spacing:-.01em}
-.lede{color:var(--muted);max-width:760px;margin:0}
+.lede{color:var(--muted);max-width:780px;margin:0}
 .bar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
 .bar-in{max-width:1240px;margin:0 auto;padding:10px 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.seg{display:flex;border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.seg button{border:0;border-radius:0;background:var(--panel)}
+.seg button.on{background:var(--ink);color:var(--bg)}
 .count{color:var(--muted);font-size:14px;margin-right:auto}
 button{font:inherit;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:7px 14px;border-radius:8px;cursor:pointer}
 button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.jump{display:flex;gap:6px;flex-wrap:wrap;max-width:1240px;margin:0 auto;padding:0 16px 8px}
+.jump a{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:2px 10px}
+.jump a:hover{color:var(--ink)}
 main{max-width:1240px;margin:0 auto;padding:8px 16px 60px}
-section{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;margin:18px 0}
+section{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;margin:18px 0;scroll-margin-top:120px}
 .head{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
 .tag{font-size:12px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:1px 7px}
 h2{margin:0;font-size:20px;flex:1 1 auto}
-.stars{display:flex;gap:2px}
+.stars{display:flex;gap:1px}
 .stars button{border:0;background:none;padding:2px;font-size:26px;line-height:1;color:var(--star-off)}
 .stars button.on{color:var(--star)}
+.stars.sm button{font-size:20px;padding:1px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
-figure{margin:0;background:var(--card);border-radius:10px;overflow:hidden;cursor:zoom-in;border:1px solid var(--line)}
-figure img{display:block;width:100%;aspect-ratio:2/3;object-fit:contain}
-figure img.px{image-rendering:pixelated}
-figcaption{font-size:12px;color:#5a4d46;padding:4px 8px 6px;background:var(--card)}
+figure{margin:0;background:var(--card);border-radius:10px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
+figure img{display:block;width:100%;aspect-ratio:2/3;object-fit:contain;cursor:zoom-in}
+.px{image-rendering:pixelated}
+figcaption{font-size:12px;color:var(--cap);padding:4px 8px 2px;background:var(--card)}
+figure .stars{padding:0 4px 4px}
+figure .stars button{color:#d8cfc6}
+figure .stars button.on{color:#d9a21b}
 .note{margin-top:10px}
 .note input{width:100%;font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
-#lb{position:fixed;inset:0;background:rgba(10,6,5,.92);display:none;align-items:center;justify-content:center;z-index:20;padding:16px}
+#lb{position:fixed;inset:0;background:rgba(10,6,5,.94);display:none;flex-direction:column;align-items:center;justify-content:center;z-index:20;padding:12px 64px}
 #lb.open{display:flex}
-#lb img{max-width:100%;max-height:88vh;background:#fff;border-radius:8px}
-#lb p{position:absolute;bottom:12px;left:0;right:0;text-align:center;color:#eee;margin:0}
+#lb img{max-width:100%;max-height:82vh;background:#fff;border-radius:8px}
+#lb .cap{color:#eee;margin:10px 0 4px;text-align:center}
+#lb .stars button{color:#6b5a52}
+#lb .stars button.on{color:#f0bd3a}
+#lb .nav{position:absolute;top:50%;transform:translateY(-50%);font-size:34px;line-height:1;background:rgba(255,255,255,.12);color:#fff;border:0;width:48px;height:64px;border-radius:10px}
+#lb .prev{left:8px} #lb .next{right:8px}
+#lb .close{position:absolute;top:10px;right:12px;background:none;border:0;color:#fff;font-size:28px}
 #toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:8px;display:none;z-index:30}
-@media (max-width:520px){.grid{grid-template-columns:repeat(2,1fr)}.stars button{font-size:24px}}
+@media (max-width:520px){.grid{grid-template-columns:repeat(2,1fr)}#lb{padding:12px 8px 70px}#lb .nav{top:auto;bottom:10px;transform:none}}
 </style>
 </head>
 <body>
 <header>
   <h1>Squared Circle Soul: style vote</h1>
-  <p class="lede">The same ten Ringstate characters, drawn in 27 candidate art styles. Give each style one to five stars and add a note if you like, then hit <b>Send ratings</b>. Click any picture to see it big.</p>
+  <p class="lede">The same ten Ringstate characters drawn in many candidate art styles. <b>By style</b>: give each style one to five stars. <b>By character</b>: see one person in every style and star each picture. Click any picture to see it full size and use the arrows (or your arrow keys) to step through. When you're done, hit <b>Send ratings</b>.</p>
 </header>
 <div class="bar"><div class="bar-in">
-  <span class="count" id="count">0 of 27 rated</span>
+  <div class="seg" role="tablist"><button id="v-style" class="on">By style</button><button id="v-char">By character</button></div>
+  <span class="count" id="count"></span>
   <button id="copy">Copy ratings</button>
   <button class="primary" id="send">Send ratings</button>
-</div></div>
+</div><nav class="jump" id="jump"></nav></div>
 <main id="main"></main>
-<div id="lb"><img alt=""><p></p></div>
+<div id="lb"><button class="close" aria-label="Close">✕</button><button class="nav prev" aria-label="Previous">‹</button><img alt=""><div class="cap"></div><div class="stars sm" id="lbstars"></div><button class="nav next" aria-label="Next">›</button></div>
 <div id="toast"></div>
 <script>
-const KEY="scs-style-vote-v1";
-let store={};try{store=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){}
+const KEY="scs-style-vote-v2";
+let store={styles:{},images:{}};
+try{const s=JSON.parse(localStorage.getItem(KEY)||"null");if(s)store=s;else{const old=JSON.parse(localStorage.getItem("scs-style-vote-v1")||"{}");store.styles=old||{}}}catch(e){}
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(store))}catch(e){}};
-let styles=[];
+let styles=[],chars=[],view="style",list=[],pos=0;
 const $=s=>document.querySelector(s);
+const imgKey=(sk,name)=>sk+"|"+name;
 function toast(t){const el=$("#toast");el.textContent=t;el.style.display="block";setTimeout(()=>el.style.display="none",2200)}
-function updateCount(){$("#count").textContent=`${styles.filter(s=>store[s.key]?.stars).length} of ${styles.length} rated`}
-function summary(){
-  return styles.map(s=>{const r=store[s.key]||{};return `${s.key} ${s.name}: ${r.stars?("★".repeat(r.stars)+` (${r.stars}/5)`):"not rated"}${r.note?` | ${r.note}`:""}`}).join("\n");
+function makeStars(get,set,small){
+  const d=document.createElement("div");d.className="stars"+(small?" sm":"");
+  const paint=()=>[...d.children].forEach((b,i)=>b.classList.toggle("on",i<(get()||0)));
+  for(let i=1;i<=5;i++){const b=document.createElement("button");b.textContent="★";b.setAttribute("aria-label",i+" star"+(i>1?"s":""));
+    b.onclick=e=>{e.stopPropagation();set(get()===i?0:i);save();paint();updateCount();syncAll()};d.appendChild(b)}
+  d._paint=paint;paint();return d;
+}
+const painters=new Set();function syncAll(){painters.forEach(p=>p())}
+function updateCount(){
+  const sr=styles.filter(s=>store.styles[s.key]?.stars).length;
+  const ir=Object.values(store.images).filter(Boolean).length;
+  $("#count").textContent=`${sr} of ${styles.length} styles rated · ${ir} pictures rated`;
+}
+function openLb(items,i){list=items;pos=i;showLb();$("#lb").classList.add("open")}
+function showLb(){
+  const it=list[pos];const im=$("#lb img");im.src=it.full;im.className=it.px?"px":"";im.alt=`${it.name}, ${it.styleName}`;
+  $("#lb .cap").textContent=`${it.name} · ${it.styleKey} ${it.styleName}  (${pos+1} of ${list.length})`;
+  const host=$("#lbstars");host.replaceWith(Object.assign(makeStars(()=>store.images[imgKey(it.styleKey,it.name)],v=>store.images[imgKey(it.styleKey,it.name)]=v,true),{id:"lbstars"}));
+  const nx=list[(pos+1)%list.length];new Image().src=nx.full;
+}
+function step(d){pos=(pos+d+list.length)%list.length;showLb()}
+function figure(it,caption,items,i,rateable){
+  const f=document.createElement("figure");
+  const img=document.createElement("img");img.loading="lazy";img.src=it.src;img.alt=`${it.name}, ${it.styleName}`;if(it.px)img.classList.add("px");
+  img.onclick=()=>openLb(items,i);f.appendChild(img);
+  const c=document.createElement("figcaption");c.textContent=caption;f.appendChild(c);
+  if(rateable){const k=imgKey(it.styleKey,it.name);const st=makeStars(()=>store.images[k],v=>store.images[k]=v,true);painters.add(st._paint);f.appendChild(st)}
+  return f;
 }
 function render(){
-  const main=$("#main");
-  styles.forEach(s=>{
-    const sec=document.createElement("section");
-    const px=/sprite|pixel/i.test(s.name);
-    sec.innerHTML=`<div class="head"><span class="tag">${s.key}</span><h2></h2><div class="stars" role="radiogroup" aria-label="Rate ${s.name}"></div></div><div class="grid"></div><div class="note"><input type="text" placeholder="Optional note on this style"></div>`;
-    sec.querySelector("h2").textContent=s.name;
-    const stars=sec.querySelector(".stars");
-    const paint=()=>[...stars.children].forEach((b,i)=>b.classList.toggle("on",i<(store[s.key]?.stars||0)));
-    for(let i=1;i<=5;i++){const b=document.createElement("button");b.textContent="★";b.setAttribute("aria-label",`${i} star${i>1?"s":""}`);
-      b.onclick=()=>{store[s.key]={...(store[s.key]||{}),stars:i};save();paint();updateCount()};stars.appendChild(b)}
-    paint();
-    const grid=sec.querySelector(".grid");
-    s.items.forEach(it=>{const f=document.createElement("figure");f.innerHTML=`<img loading="lazy" alt=""><figcaption></figcaption>`;
-      const img=f.querySelector("img");img.src=it.src;img.alt=`${it.name}, ${s.name}`;if(px)img.classList.add("px");
-      f.querySelector("figcaption").textContent=it.name;
-      f.onclick=()=>{const lb=$("#lb");lb.querySelector("img").src=it.src;lb.querySelector("img").style.imageRendering=px?"pixelated":"auto";lb.querySelector("p").textContent=`${it.name} · ${s.name}`;lb.classList.add("open")};
-      grid.appendChild(f)});
-    const note=sec.querySelector(".note input");note.value=store[s.key]?.note||"";
-    note.oninput=()=>{store[s.key]={...(store[s.key]||{}),note:note.value};save()};
-    main.appendChild(sec);
-  });
+  const main=$("#main");main.innerHTML="";painters.clear();const jump=$("#jump");jump.innerHTML="";
+  if(view==="style"){
+    styles.forEach(s=>{
+      const sec=document.createElement("section");sec.id="s-"+s.key;
+      sec.innerHTML=`<div class="head"><span class="tag">${s.key}</span><h2></h2></div><div class="grid"></div><div class="note"><input type="text" placeholder="Optional note on this style"></div>`;
+      sec.querySelector("h2").textContent=s.name;
+      const st=makeStars(()=>store.styles[s.key]?.stars,v=>store.styles[s.key]={...(store.styles[s.key]||{}),stars:v});painters.add(st._paint);sec.querySelector(".head").appendChild(st);
+      const grid=sec.querySelector(".grid");s.items.forEach((it,i)=>grid.appendChild(figure(it,it.name,s.items,i,false)));
+      const note=sec.querySelector(".note input");note.value=store.styles[s.key]?.note||"";
+      note.oninput=()=>{store.styles[s.key]={...(store.styles[s.key]||{}),note:note.value};save()};
+      main.appendChild(sec);
+      const a=document.createElement("a");a.href="#s-"+s.key;a.textContent=s.key;jump.appendChild(a);
+    });
+  }else{
+    chars.forEach((c,ci)=>{
+      const sec=document.createElement("section");sec.id="c-"+ci;
+      sec.innerHTML=`<div class="head"><h2></h2></div><div class="grid"></div>`;sec.querySelector("h2").textContent=c.name;
+      const grid=sec.querySelector(".grid");c.items.forEach((it,i)=>grid.appendChild(figure(it,`${it.styleKey} · ${it.styleName}`,c.items,i,true)));
+      main.appendChild(sec);
+      const a=document.createElement("a");a.href="#c-"+ci;a.textContent=c.name;jump.appendChild(a);
+    });
+  }
   updateCount();
 }
-$("#lb").onclick=()=>$("#lb").classList.remove("open");
+function setView(v){view=v;$("#v-style").classList.toggle("on",v==="style");$("#v-char").classList.toggle("on",v==="char");render();window.scrollTo(0,0)}
+$("#v-style").onclick=()=>setView("style");$("#v-char").onclick=()=>setView("char");
+function summary(){
+  const lines=["STYLES"];
+  styles.forEach(s=>{const r=store.styles[s.key]||{};lines.push(`${s.key} ${s.name}: ${r.stars?r.stars+"/5":"-"}${r.note?" | "+r.note:""}`)});
+  lines.push("","PICTURES (style=stars)");
+  chars.forEach(c=>{const rs=c.items.map(it=>[it.styleKey,store.images[imgKey(it.styleKey,it.name)]]).filter(x=>x[1]);if(rs.length)lines.push(`${c.name}: `+rs.map(x=>x[0]+"="+x[1]).join(" "))});
+  return lines.join("\n");
+}
+$("#lb .prev").onclick=e=>{e.stopPropagation();step(-1)};$("#lb .next").onclick=e=>{e.stopPropagation();step(1)};
+$("#lb .close").onclick=()=>$("#lb").classList.remove("open");
+$("#lb").onclick=e=>{if(e.target.id==="lb")$("#lb").classList.remove("open")};
+document.addEventListener("keydown",e=>{if(!$("#lb").classList.contains("open"))return;if(e.key==="ArrowRight")step(1);else if(e.key==="ArrowLeft")step(-1);else if(e.key==="Escape")$("#lb").classList.remove("open")});
+let tx=null;$("#lb").addEventListener("touchstart",e=>tx=e.touches[0].clientX,{passive:true});
+$("#lb").addEventListener("touchend",e=>{if(tx===null)return;const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>50)step(dx<0?1:-1);tx=null});
 $("#copy").onclick=async()=>{try{await navigator.clipboard.writeText(summary());toast("Ratings copied")}catch(e){prompt("Copy your ratings:",summary())}};
 $("#send").onclick=()=>{
   const who=prompt("Your name or handle (optional):")||"anonymous";
   const body=`Rater: ${who}\n\n\`\`\`\n${summary()}\n\`\`\``;
   window.open(`https://github.com/OyajiLove/scs-style-vote/issues/new?title=${encodeURIComponent("Ratings from "+who)}&labels=ratings&body=${encodeURIComponent(body)}`,"_blank");
 };
-fetch("styles.json").then(r=>r.json()).then(d=>{styles=d;render()}).catch(()=>{$("#main").textContent="Could not load the styles list."});
+fetch("styles.json").then(r=>r.json()).then(d=>{
+  styles=d;const byName={};
+  styles.forEach(s=>s.items.forEach(it=>{Object.assign(it,{styleKey:s.key,styleName:s.name,px:/sprite|pixel/i.test(s.name)});(byName[it.name]=byName[it.name]||[]).push(it)}));
+  chars=Object.keys(byName).sort().map(n=>({name:n,items:byName[n]}));
+  render();
+}).catch(()=>{$("#main").textContent="Could not load the styles list."});
 </script>
 </body>
 </html>
